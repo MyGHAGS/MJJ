@@ -1,0 +1,139 @@
+.historia {
+  min-height: 100vh;
+  padding: 100px 24px 60px;
+  background: var(--primary-black);
+}
+
+.historia-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.historia-header h1 {
+  font-size: clamp(36px, 8vw, 64px);
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.historia-header p {
+  color: var(--silver);
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--gold), transparent);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-item.left {
+  flex-direction: row;
+}
+
+.timeline-item.right {
+  flex-direction: row-reverse;
+}
+
+.timeline-content {
+  width: 45%;
+  padding: 24px;
+  background: var(--secondary-black);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+.timeline-item.left .timeline-content {
+  text-align: right;
+  margin-right: auto;
+}
+
+.timeline-item.right .timeline-content {
+  text-align: left;
+  margin-left: auto;
+}
+
+.year {
+  display: inline-block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.timeline-content h3 {
+  font-size: 20px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.timeline-content p {
+  color: var(--silver);
+  font-size: 14px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background: var(--gold);
+  border-radius: 50%;
+  border: 3px solid var(--primary-black);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .historia {
+    padding: 100px 16px 40px;
+  }
+  
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 50px;
+  }
+  
+  .timeline-content,
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content {
+    width: 100%;
+    text-align: left;
+    margin: 0;
+  }
+  
+  .timeline-dot {
+    left: 20px;
+  }
+}
